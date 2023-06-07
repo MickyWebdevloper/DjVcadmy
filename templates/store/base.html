@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        Django Ecommerce Store
+        {% endblock title %}
+    </title>
+    <!-- bootstrap css  -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <div class="container-fluid p-0">
+        {% include "./navbar.html" %}
+    </div>
+
+    <div class="container my-5">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+
+    <!--boostrape javascript.  -->
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="pricing-header py-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal">Pricing</h1>
+    <p class="fs-5 text-muted">Quickly build an effective pricing table for your potential customers with this Bootstrap
+        example. It’s built with default Bootstrap components and utilities with little customization.</p>
+</div>
+
+<main>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        {% for data in products %}
+        <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-body">
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <a class="display-4 fw-bold text-black list-unstyled"
+                            href="{{ data.get_absolute_url }}">{{ data.title }}</a>
+                        <h2>{{ data.description }}</h2>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+
+{% endblock content %}
